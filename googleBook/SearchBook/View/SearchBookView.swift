@@ -22,6 +22,6 @@ class SearchBookView: UIViewController {
 
 extension SearchBookView: SearchBookUIDelegate {
     func search() {
-
     }
+
 }

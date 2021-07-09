@@ -92,7 +92,7 @@ class SearchBookViewUI: UIView {
     }
 
     @objc func buttonClicked(sender : UIButton){
-
+        delegate?.search()
     }
 
     fileprivate func setupConstraints() {

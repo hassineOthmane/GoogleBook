@@ -16,6 +16,16 @@
 		B64290BD2698F4E000EC8912 /* SearchBookViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290BC2698F4E000EC8912 /* SearchBookViewUI.swift */; };
 		B64290C32698F55900EC8912 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290C22698F55900EC8912 /* UIView+Extension.swift */; };
 		B64290CC2698F58300EC8912 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290CB2698F58300EC8912 /* Const.swift */; };
+		B64290D62698F66F00EC8912 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290D52698F66F00EC8912 /* NetworkLayer.swift */; };
+		B64290DE2698F67A00EC8912 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290DD2698F67A00EC8912 /* NetworkRouter.swift */; };
+		B64290E32698F68400EC8912 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290E22698F68400EC8912 /* NetworkMethod.swift */; };
+		B64290E92698F6D200EC8912 /* HTTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290E82698F6D200EC8912 /* HTTPRouter.swift */; };
+		B64290F12698F6DC00EC8912 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290F02698F6DC00EC8912 /* HTTPError.swift */; };
+		B64290F62698F6E600EC8912 /* HTTPEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290F52698F6E600EC8912 /* HTTPEndPoint.swift */; };
+		B64290FB2698F6F000EC8912 /* HTTPLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290FA2698F6F000EC8912 /* HTTPLayer.swift */; };
+		B64291012698F80B00EC8912 /* BookServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64291002698F80B00EC8912 /* BookServices.swift */; };
+		B642910A2699000E00EC8912 /* BooksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64291092699000E00EC8912 /* BooksModel.swift */; };
+		B64291122699001F00EC8912 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64291112699001F00EC8912 /* BookModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +61,16 @@
 		B64290BC2698F4E000EC8912 /* SearchBookViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewUI.swift; sourceTree = "<group>"; };
 		B64290C22698F55900EC8912 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B64290CB2698F58300EC8912 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		B64290D52698F66F00EC8912 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		B64290DD2698F67A00EC8912 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		B64290E22698F68400EC8912 /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
+		B64290E82698F6D200EC8912 /* HTTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRouter.swift; sourceTree = "<group>"; };
+		B64290F02698F6DC00EC8912 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		B64290F52698F6E600EC8912 /* HTTPEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEndPoint.swift; sourceTree = "<group>"; };
+		B64290FA2698F6F000EC8912 /* HTTPLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPLayer.swift; sourceTree = "<group>"; };
+		B64291002698F80B00EC8912 /* BookServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookServices.swift; sourceTree = "<group>"; };
+		B64291092699000E00EC8912 /* BooksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksModel.swift; sourceTree = "<group>"; };
+		B64291112699001F00EC8912 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +121,11 @@
 		B642903F2698DA1A00EC8912 /* googleBook */ = {
 			isa = PBXGroup;
 			children = (
-				B64290CA2698F57500EC8912 /* Utils */,
 				B64290C12698F53D00EC8912 /* Extensions */,
+				B64290CA2698F57500EC8912 /* Utils */,
+				B64291082699000100EC8912 /* Models */,
+				B64290D32698F65200EC8912 /* NetworkLayer */,
+				B64290FF2698F7E700EC8912 /* Services */,
 				B64290912698DB6300EC8912 /* AppDelegate */,
 				B64290922698DB7400EC8912 /* SearchBook */,
 				B64290492698DA1D00EC8912 /* Assets.xcassets */,
@@ -141,8 +164,8 @@
 		B64290922698DB7400EC8912 /* SearchBook */ = {
 			isa = PBXGroup;
 			children = (
-				B64290442698DA1A00EC8912 /* SearchBookView.swift */,
-				B64290BC2698F4E000EC8912 /* SearchBookViewUI.swift */,
+				B64291162699005F00EC8912 /* View */,
+				B64291172699006D00EC8912 /* Router */,
 			);
 			path = SearchBook;
 			sourceTree = "<group>";
@@ -161,6 +184,69 @@
 				B64290CB2698F58300EC8912 /* Const.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B64290D32698F65200EC8912 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				B64290E72698F6AE00EC8912 /* HttpRequest */,
+				B64290D42698F65D00EC8912 /* Protocols */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		B64290D42698F65D00EC8912 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B64290D52698F66F00EC8912 /* NetworkLayer.swift */,
+				B64290DD2698F67A00EC8912 /* NetworkRouter.swift */,
+				B64290E22698F68400EC8912 /* NetworkMethod.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B64290E72698F6AE00EC8912 /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				B64290E82698F6D200EC8912 /* HTTPRouter.swift */,
+				B64290F02698F6DC00EC8912 /* HTTPError.swift */,
+				B64290F52698F6E600EC8912 /* HTTPEndPoint.swift */,
+				B64290FA2698F6F000EC8912 /* HTTPLayer.swift */,
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
+		B64290FF2698F7E700EC8912 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B64291002698F80B00EC8912 /* BookServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B64291082699000100EC8912 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B64291092699000E00EC8912 /* BooksModel.swift */,
+				B64291112699001F00EC8912 /* BookModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B64291162699005F00EC8912 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B64290442698DA1A00EC8912 /* SearchBookView.swift */,
+				B64290BC2698F4E000EC8912 /* SearchBookViewUI.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B64291172699006D00EC8912 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,11 +378,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B64291122699001F00EC8912 /* BookModel.swift in Sources */,
+				B64290F62698F6E600EC8912 /* HTTPEndPoint.swift in Sources */,
+				B64290D62698F66F00EC8912 /* NetworkLayer.swift in Sources */,
+				B64290E32698F68400EC8912 /* NetworkMethod.swift in Sources */,
+				B64290E92698F6D200EC8912 /* HTTPRouter.swift in Sources */,
 				B64290BD2698F4E000EC8912 /* SearchBookViewUI.swift in Sources */,
 				B64290452698DA1A00EC8912 /* SearchBookView.swift in Sources */,
 				B64290C32698F55900EC8912 /* UIView+Extension.swift in Sources */,
 				B64290412698DA1A00EC8912 /* AppDelegate.swift in Sources */,
+				B64291012698F80B00EC8912 /* BookServices.swift in Sources */,
 				B64290CC2698F58300EC8912 /* Const.swift in Sources */,
+				B642910A2699000E00EC8912 /* BooksModel.swift in Sources */,
+				B64290F12698F6DC00EC8912 /* HTTPError.swift in Sources */,
+				B64290DE2698F67A00EC8912 /* NetworkRouter.swift in Sources */,
+				B64290FB2698F6F000EC8912 /* HTTPLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
