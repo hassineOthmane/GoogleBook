@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B64290412698DA1A00EC8912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290402698DA1A00EC8912 /* AppDelegate.swift */; };
-		B64290432698DA1A00EC8912 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290422698DA1A00EC8912 /* SceneDelegate.swift */; };
 		B64290452698DA1A00EC8912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290442698DA1A00EC8912 /* ViewController.swift */; };
-		B64290482698DA1A00EC8912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64290462698DA1A00EC8912 /* Main.storyboard */; };
 		B642904A2698DA1D00EC8912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64290492698DA1D00EC8912 /* Assets.xcassets */; };
 		B642904D2698DA1D00EC8912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B642904B2698DA1D00EC8912 /* LaunchScreen.storyboard */; };
 		B64290582698DA1D00EC8912 /* googleBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290572698DA1D00EC8912 /* googleBookTests.swift */; };
@@ -37,9 +35,7 @@
 /* Begin PBXFileReference section */
 		B642903D2698DA1A00EC8912 /* googleBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googleBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64290402698DA1A00EC8912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B64290422698DA1A00EC8912 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B64290442698DA1A00EC8912 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B64290472698DA1A00EC8912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B64290492698DA1D00EC8912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B642904C2698DA1D00EC8912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B642904E2698DA1D00EC8912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,10 +95,8 @@
 		B642903F2698DA1A00EC8912 /* googleBook */ = {
 			isa = PBXGroup;
 			children = (
-				B64290402698DA1A00EC8912 /* AppDelegate.swift */,
-				B64290422698DA1A00EC8912 /* SceneDelegate.swift */,
-				B64290442698DA1A00EC8912 /* ViewController.swift */,
-				B64290462698DA1A00EC8912 /* Main.storyboard */,
+				B64290912698DB6300EC8912 /* AppDelegate */,
+				B64290922698DB7400EC8912 /* SearchBook */,
 				B64290492698DA1D00EC8912 /* Assets.xcassets */,
 				B642904B2698DA1D00EC8912 /* LaunchScreen.storyboard */,
 				B642904E2698DA1D00EC8912 /* Info.plist */,
@@ -126,6 +120,22 @@
 				B64290642698DA1D00EC8912 /* Info.plist */,
 			);
 			path = googleBookUITests;
+			sourceTree = "<group>";
+		};
+		B64290912698DB6300EC8912 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B64290402698DA1A00EC8912 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		B64290922698DB7400EC8912 /* SearchBook */ = {
+			isa = PBXGroup;
+			children = (
+				B64290442698DA1A00EC8912 /* ViewController.swift */,
+			);
+			path = SearchBook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +243,6 @@
 			files = (
 				B642904D2698DA1D00EC8912 /* LaunchScreen.storyboard in Resources */,
 				B642904A2698DA1D00EC8912 /* Assets.xcassets in Resources */,
-				B64290482698DA1A00EC8912 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +269,6 @@
 			files = (
 				B64290452698DA1A00EC8912 /* ViewController.swift in Sources */,
 				B64290412698DA1A00EC8912 /* AppDelegate.swift in Sources */,
-				B64290432698DA1A00EC8912 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +304,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B64290462698DA1A00EC8912 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B64290472698DA1A00EC8912 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B642904B2698DA1D00EC8912 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
