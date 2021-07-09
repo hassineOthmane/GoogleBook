@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B64290412698DA1A00EC8912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290402698DA1A00EC8912 /* AppDelegate.swift */; };
-		B64290452698DA1A00EC8912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290442698DA1A00EC8912 /* ViewController.swift */; };
+		B64290452698DA1A00EC8912 /* SearchBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290442698DA1A00EC8912 /* SearchBookView.swift */; };
 		B642904A2698DA1D00EC8912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64290492698DA1D00EC8912 /* Assets.xcassets */; };
 		B642904D2698DA1D00EC8912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B642904B2698DA1D00EC8912 /* LaunchScreen.storyboard */; };
 		B64290582698DA1D00EC8912 /* googleBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290572698DA1D00EC8912 /* googleBookTests.swift */; };
 		B64290632698DA1D00EC8912 /* googleBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290622698DA1D00EC8912 /* googleBookUITests.swift */; };
+		B64290BD2698F4E000EC8912 /* SearchBookViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290BC2698F4E000EC8912 /* SearchBookViewUI.swift */; };
+		B64290C32698F55900EC8912 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290C22698F55900EC8912 /* UIView+Extension.swift */; };
+		B64290CC2698F58300EC8912 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290CB2698F58300EC8912 /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +38,7 @@
 /* Begin PBXFileReference section */
 		B642903D2698DA1A00EC8912 /* googleBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googleBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64290402698DA1A00EC8912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B64290442698DA1A00EC8912 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B64290442698DA1A00EC8912 /* SearchBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookView.swift; sourceTree = "<group>"; };
 		B64290492698DA1D00EC8912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B642904C2698DA1D00EC8912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B642904E2698DA1D00EC8912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +48,9 @@
 		B642905E2698DA1D00EC8912 /* googleBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = googleBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64290622698DA1D00EC8912 /* googleBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = googleBookUITests.swift; sourceTree = "<group>"; };
 		B64290642698DA1D00EC8912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B64290BC2698F4E000EC8912 /* SearchBookViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewUI.swift; sourceTree = "<group>"; };
+		B64290C22698F55900EC8912 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		B64290CB2698F58300EC8912 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,8 @@
 		B642903F2698DA1A00EC8912 /* googleBook */ = {
 			isa = PBXGroup;
 			children = (
+				B64290CA2698F57500EC8912 /* Utils */,
+				B64290C12698F53D00EC8912 /* Extensions */,
 				B64290912698DB6300EC8912 /* AppDelegate */,
 				B64290922698DB7400EC8912 /* SearchBook */,
 				B64290492698DA1D00EC8912 /* Assets.xcassets */,
@@ -133,9 +141,26 @@
 		B64290922698DB7400EC8912 /* SearchBook */ = {
 			isa = PBXGroup;
 			children = (
-				B64290442698DA1A00EC8912 /* ViewController.swift */,
+				B64290442698DA1A00EC8912 /* SearchBookView.swift */,
+				B64290BC2698F4E000EC8912 /* SearchBookViewUI.swift */,
 			);
 			path = SearchBook;
+			sourceTree = "<group>";
+		};
+		B64290C12698F53D00EC8912 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B64290C22698F55900EC8912 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B64290CA2698F57500EC8912 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B64290CB2698F58300EC8912 /* Const.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B64290452698DA1A00EC8912 /* ViewController.swift in Sources */,
+				B64290BD2698F4E000EC8912 /* SearchBookViewUI.swift in Sources */,
+				B64290452698DA1A00EC8912 /* SearchBookView.swift in Sources */,
+				B64290C32698F55900EC8912 /* UIView+Extension.swift in Sources */,
 				B64290412698DA1A00EC8912 /* AppDelegate.swift in Sources */,
+				B64290CC2698F58300EC8912 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
