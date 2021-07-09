@@ -13,7 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UINavigationController.init(rootViewController: SearchBookView.init())
+        let router = SearchBooksRouter.init()
+        let vc = router.createModule()
+        window.rootViewController = UINavigationController.init(rootViewController: vc)
         window.makeKeyAndVisible()
         self.window = window
         return true

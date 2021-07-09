@@ -8,14 +8,14 @@ import UIKit
 
 // MARK: SearchBookViewUI Delegate -
 /// SearchBookViewUI Delegate
-protocol SearchBookUIDelegate {
-    func search()
+protocol SearchBooksUIDelegate {
+    func search(title:String,author:String)
 }
 
 
-class SearchBookViewUI: UIView {
+class SearchBooksViewUI: UIView {
 
-    var delegate: SearchBookUIDelegate?
+    var delegate: SearchBooksUIDelegate?
 
 
     // ui components
@@ -92,7 +92,7 @@ class SearchBookViewUI: UIView {
     }
 
     @objc func buttonClicked(sender : UIButton){
-        delegate?.search()
+        delegate?.search(title: title.text ?? "", author: author.text ?? "")
     }
 
     fileprivate func setupConstraints() {

@@ -26,6 +26,9 @@
 		B64291012698F80B00EC8912 /* BookServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64291002698F80B00EC8912 /* BookServices.swift */; };
 		B642910A2699000E00EC8912 /* BooksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64291092699000E00EC8912 /* BooksModel.swift */; };
 		B64291122699001F00EC8912 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64291112699001F00EC8912 /* BookModel.swift */; };
+		B642911C2699015E00EC8912 /* SearchBookRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642911B2699015E00EC8912 /* SearchBookRouter.swift */; };
+		B64291222699032100EC8912 /* BooksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64291212699032100EC8912 /* BooksListView.swift */; };
+		B642912B2699040200EC8912 /* SearchBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642912A2699040200EC8912 /* SearchBookPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		B64291002698F80B00EC8912 /* BookServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookServices.swift; sourceTree = "<group>"; };
 		B64291092699000E00EC8912 /* BooksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksModel.swift; sourceTree = "<group>"; };
 		B64291112699001F00EC8912 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		B642911B2699015E00EC8912 /* SearchBookRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookRouter.swift; sourceTree = "<group>"; };
+		B64291212699032100EC8912 /* BooksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListView.swift; sourceTree = "<group>"; };
+		B642912A2699040200EC8912 /* SearchBookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		B642903F2698DA1A00EC8912 /* googleBook */ = {
 			isa = PBXGroup;
 			children = (
+				B6429120269902F200EC8912 /* BooksList */,
 				B64290C12698F53D00EC8912 /* Extensions */,
 				B64290CA2698F57500EC8912 /* Utils */,
 				B64291082699000100EC8912 /* Models */,
@@ -164,6 +171,7 @@
 		B64290922698DB7400EC8912 /* SearchBook */ = {
 			isa = PBXGroup;
 			children = (
+				B6429129269903D300EC8912 /* Presenter */,
 				B64291162699005F00EC8912 /* View */,
 				B64291172699006D00EC8912 /* Router */,
 			);
@@ -245,8 +253,25 @@
 		B64291172699006D00EC8912 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				B642911B2699015E00EC8912 /* SearchBookRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		B6429120269902F200EC8912 /* BooksList */ = {
+			isa = PBXGroup;
+			children = (
+				B64291212699032100EC8912 /* BooksListView.swift */,
+			);
+			path = BooksList;
+			sourceTree = "<group>";
+		};
+		B6429129269903D300EC8912 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B642912A2699040200EC8912 /* SearchBookPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +406,7 @@
 				B64291122699001F00EC8912 /* BookModel.swift in Sources */,
 				B64290F62698F6E600EC8912 /* HTTPEndPoint.swift in Sources */,
 				B64290D62698F66F00EC8912 /* NetworkLayer.swift in Sources */,
+				B642911C2699015E00EC8912 /* SearchBookRouter.swift in Sources */,
 				B64290E32698F68400EC8912 /* NetworkMethod.swift in Sources */,
 				B64290E92698F6D200EC8912 /* HTTPRouter.swift in Sources */,
 				B64290BD2698F4E000EC8912 /* SearchBookViewUI.swift in Sources */,
@@ -392,7 +418,9 @@
 				B642910A2699000E00EC8912 /* BooksModel.swift in Sources */,
 				B64290F12698F6DC00EC8912 /* HTTPError.swift in Sources */,
 				B64290DE2698F67A00EC8912 /* NetworkRouter.swift in Sources */,
+				B64291222699032100EC8912 /* BooksListView.swift in Sources */,
 				B64290FB2698F6F000EC8912 /* HTTPLayer.swift in Sources */,
+				B642912B2699040200EC8912 /* SearchBookPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
