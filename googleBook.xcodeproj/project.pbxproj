@@ -102,8 +102,8 @@
 		B6A999912699325B00A9E1E3 /* BooksListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListRouter.swift; sourceTree = "<group>"; };
 		B6A9999A269937A100A9E1E3 /* BooksListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListInteractor.swift; sourceTree = "<group>"; };
 		B6A99B312699820300A9E1E3 /* BookDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookDataModel.xcdatamodel; sourceTree = "<group>"; };
-		B6A99B402699840900A9E1E3 /* BookDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BookDataModel+CoreDataClass.swift"; path = "googleBook/Data/BookDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B6A99B412699840900A9E1E3 /* BookDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BookDataModel+CoreDataProperties.swift"; path = "googleBook/Data/BookDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B6A99B402699840900A9E1E3 /* BookDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B6A99B412699840900A9E1E3 /* BookDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B6D7BECA2699AB1200E60DF8 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		B6D7BEE02699C08200E60DF8 /* BookDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailPresenter.swift; sourceTree = "<group>"; };
 		B6D7BEE82699C0A900E60DF8 /* BookDetailViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewUI.swift; sourceTree = "<group>"; };
@@ -145,8 +145,6 @@
 		B64290342698DA1A00EC8912 = {
 			isa = PBXGroup;
 			children = (
-				B6A99B402699840900A9E1E3 /* BookDataModel+CoreDataClass.swift */,
-				B6A99B412699840900A9E1E3 /* BookDataModel+CoreDataProperties.swift */,
 				B642903F2698DA1A00EC8912 /* googleBook */,
 				B64290562698DA1D00EC8912 /* googleBookTests */,
 				B64290612698DA1D00EC8912 /* googleBookUITests */,
@@ -367,6 +365,8 @@
 		B6A99B1626997D9C00A9E1E3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B6A99B402699840900A9E1E3 /* BookDataModel+CoreDataClass.swift */,
+				B6A99B412699840900A9E1E3 /* BookDataModel+CoreDataProperties.swift */,
 				B6A99B302699820300A9E1E3 /* BookDataModel.xcdatamodeld */,
 			);
 			path = Data;

@@ -16,7 +16,11 @@ protocol ViewToPresenterSearchBooksProtocol {
 
     func showBooks(title:String,author:String)
 
+    func viewDidLoad() -> Void
+
     func showLibrary()
+
+    func saveLastSearchValue(title:String,author:String)
 
 }
 
@@ -39,7 +43,22 @@ class SearchBooksPresenter: ViewToPresenterSearchBooksProtocol {
     func showLibrary() {
         if let viewController = view?.viewController
         {
-        router?.showLibrary(for: viewController)
+            router?.showLibrary(for: viewController)
         }
+    }
+
+    func saveLastSearchValue(title:String,author:String) {
+        UserDefaults.standard.set(title, forKey: "title")
+        UserDefaults.standard.set(author, forKey: "author")
+        UserDefaults.standard.synchronize()
+    }
+
+    func viewDidLoad() {
+        if let title = UserDefaults.standard.string(forKey: "title"),  let author = UserDefaults.standard.string(forKey: "author")
+        {
+            view?.setLastValues(title: title, author: author)
+        }
+
+
     }
 }

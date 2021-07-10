@@ -49,26 +49,8 @@ protocol InteractorToPresenterBooksListProtocol {
 
 }
 
-
+// MARK: BooksListPresenter
 class BooksListPresenter: ViewToPresenterBooksListProtocol {
-
-    func removeFavoris(book: BookModel) {
-        interactor?.removeFavoris(book: book)
-    }
-
-    func showDetail(book: BookModel) {
-        if let viewController = self.view?.viewController
-        {
-            router?.showBookDetail(for:viewController, book: book)
-        }
-
-    }
-
-
-    func saveFavoris(book: BookModel) {
-        interactor?.saveFavoris(book: book)
-    }
-
 
     var isOffline: Bool = false
 
@@ -95,7 +77,6 @@ class BooksListPresenter: ViewToPresenterBooksListProtocol {
             interactor?.fetchFavoritesBook()
         }
 
-
     }
 
     func fetchMoreBooks( index: Int) {
@@ -113,7 +94,20 @@ class BooksListPresenter: ViewToPresenterBooksListProtocol {
         books ?? [BookModel]()
     }
 
+    func removeFavoris(book: BookModel) {
+        interactor?.removeFavoris(book: book)
+    }
 
+    func showDetail(book: BookModel) {
+        if let viewController = self.view?.viewController
+        {
+            router?.showBookDetail(for:viewController, book: book)
+        }
+    }
+
+    func saveFavoris(book: BookModel) {
+        interactor?.saveFavoris(book: book)
+    }
 
 }
 
@@ -129,6 +123,5 @@ extension BooksListPresenter: InteractorToPresenterBooksListProtocol
        self.books = books.items
         view?.showBooks()
     }
-
 
 }

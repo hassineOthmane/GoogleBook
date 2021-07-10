@@ -51,11 +51,9 @@ class BooksListViewUI: UIView {
 
     }
 
-
     fileprivate func setupConstraints() {
         // add constraints to subviews
         var constraints = [NSLayoutConstraint]()
-
 
         //MARK: tableview constraints
         constraints += [NSLayoutConstraint.init(item: tableView, attribute: .top, relatedBy: .equal, toItem: self.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 15)] // tableView.top = hStackView.bottom + 70
@@ -87,7 +85,6 @@ extension BooksListViewUI: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
-
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -128,7 +125,6 @@ extension BooksListViewUI: UITableViewDelegate {
         {
             delegate?.showDetail(book: book)
         }
-
     }
 
 }

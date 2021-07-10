@@ -12,6 +12,8 @@ protocol PresenterToViewSearchBooksProtocol:BaseViewProtocol {
 
     var presenter: ViewToPresenterSearchBooksProtocol? { get set }
 
+    func setLastValues(title:String,author:String)
+
 }
 
 class SearchBooksView: UIViewController {
@@ -22,6 +24,7 @@ class SearchBooksView: UIViewController {
         super.viewDidLoad()
         iniUI()
         initNavigationBar()
+        presenter?.viewDidLoad()
     }
 
     func iniUI() -> Void
@@ -46,11 +49,16 @@ extension SearchBooksView: SearchBooksUIDelegate {
 
     func search(title:String,author:String) {
         presenter?.showBooks(title:title,author:author)
+        presenter?.saveLastSearchValue(title: title, author: author)
     }
 
 }
 
 extension SearchBooksView: PresenterToViewSearchBooksProtocol {
+    func setLastValues(title: String, author: String) {
+        ui.setLastValyes(title: title, author: author)
+    }
+
 
     var viewController: UIViewController {
         return self

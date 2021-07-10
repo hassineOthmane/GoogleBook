@@ -30,7 +30,6 @@ class SearchBooksViewUI: UIView {
     var title_txt : UITextField = {
         let txt = UITextField()
         txt.textColor = UIColor.white
-        txt.text = "misérables"
         txt.textAlignment = .left
         txt.font = UIFont.init(name: "LucidaGrande", size: 16)
         txt.attributedPlaceholder = NSAttributedString(string: "title",attributes: [NSAttributedString.Key.foregroundColor: Colors.placeHolderColor])
@@ -41,7 +40,6 @@ class SearchBooksViewUI: UIView {
     var author_txt : UITextField = {
         let txt = UITextField()
         txt.textAlignment = .left
-        txt.text = "Hugo"
         txt.attributedPlaceholder = NSAttributedString(string: "author",attributes: [NSAttributedString.Key.foregroundColor: Colors.placeHolderColor])
         txt.textColor = UIColor.white
         txt.font = UIFont.init(name: "LucidaGrande", size: 16)
@@ -140,5 +138,12 @@ class SearchBooksViewUI: UIView {
         constraints += [NSLayoutConstraint.init(item: author_txt, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 40)] // author.height = 40
 
         self.addConstraints(constraints)
+    }
+
+    func setLastValyes(title:String,author:String) -> Void {
+        DispatchQueue.main.async {
+            self.title_txt.text = title
+            self.author_txt.text = author
+        }
     }
 }

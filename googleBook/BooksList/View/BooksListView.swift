@@ -27,7 +27,6 @@ class BooksListView: UIViewController {
         initUI()
         initNavigationBar()
         presenter?.fetchBooks()
-
     }
 
     func initUI() -> Void {
@@ -35,7 +34,6 @@ class BooksListView: UIViewController {
         ui.dataSource = self
         view = ui
     }
-
 
     func initNavigationBar () {
         DispatchQueue.main.async {
@@ -51,7 +49,6 @@ extension BooksListView: BooksListViewUIDataSource {
     func isOffline() -> Bool {
         presenter?.isOffline ?? false
     }
-
 
     func getBooksCount() -> Int {
         return presenter?.getBooksCount() ?? 0
@@ -88,8 +85,11 @@ extension BooksListView : BooksListViewUIDelegate
 protocol BooksListViewUIDelegate {
 
     func fetchMoreBooks(page:Int)
+
     func saveFavoris(book:BookModel)
+
     func removeFavoris(book:BookModel)
+
     func showDetail(book: BookModel)
 }
 

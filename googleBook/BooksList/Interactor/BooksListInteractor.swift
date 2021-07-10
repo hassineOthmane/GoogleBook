@@ -11,30 +11,30 @@ import UIKit
 
 // MARK: Interactor Input (Presenter -> Interactor)
 protocol PresenterToInteractorBooksListProtocol {
-
+    
     var presenter: InteractorToPresenterBooksListProtocol? { get set }
-
+    
     func fetchBooks(title:String,author:String)
-
+    
     func fetchMoreBooks(title:String,author:String,index:Int)
-
+    
     func saveFavoris(book: BookModel)
-
+    
     func removeFavoris(book: BookModel)
-
+    
     func fetchFavoritesBook() 
-
+    
 }
 
 class BooksListInteractor: PresenterToInteractorBooksListProtocol {
-
+    
     var presenter: InteractorToPresenterBooksListProtocol?
-
+    
     var favoritesBook :[BookDataModel] = []
-
+    
     func fetchBooks(title: String, author: String) {
         getFavoritesBooks()
-
+        
         fetchBooks(title: title, author: author) { [self](result: Result<BooksModel, Error>) in
             switch result {
             case .success(let books):
@@ -51,11 +51,11 @@ class BooksListInteractor: PresenterToInteractorBooksListProtocol {
                 break;
             }
         }
-
+        
     }
-
+    
     func fetchMoreBooks(title: String, author: String, index: Int) {
-
+        
         fetchMoreBooks(title: title, author: author, index: index) { [self](result: Result<BooksModel, Error>) in
             switch result {
             case .success(let books):
@@ -73,8 +73,8 @@ class BooksListInteractor: PresenterToInteractorBooksListProtocol {
             }
         }
     }
-
-
+    
+    
     func fetchBooks(title:String,author:String,completion: @escaping (Result<BooksModel, Error>) -> Void) {
         let titleQueryItem = URLQueryItem(name: "q", value: title)
         let authorQueryItem = URLQueryItem(name: "inauthor", value: author)
@@ -83,7 +83,7 @@ class BooksListInteractor: PresenterToInteractorBooksListProtocol {
         let service = BookNetworkService.init(networkLayer: testNetworkLayer, networkRouter:networkRequest )
         service.fetchBooks(completion: completion)
     }
-
+    
     func fetchMoreBooks(title:String,author:String,index:Int,completion: @escaping (Result<BooksModel, Error>) -> Void) {
         let titleQueryItem = URLQueryItem(name: "q", value: title)
         let authorQueryItem = URLQueryItem(name: "inauthor", value: author)
@@ -93,11 +93,11 @@ class BooksListInteractor: PresenterToInteractorBooksListProtocol {
         let service = BookNetworkService.init(networkLayer: testNetworkLayer, networkRouter:networkRequest )
         service.fetchBooks(completion: completion)
     }
-
-
-
-
-
+    
+    
+    
+    
+    
     func fetchFavoritesBook() -> Void {
         guard let appDelegate =
                 UIApplication.shared.delegate as? AppDelegate else {
@@ -111,14 +111,14 @@ class BooksListInteractor: PresenterToInteractorBooksListProtocol {
                 let booksMapped = booksList.map { (book) -> BookModel in return book.toDomain()}
                 presenter?.set(books: BooksModel.init(items: booksMapped))
             }
-
+            
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
-
+    
     func saveFavoris(book: BookModel) {
-
+        
         if !checkIfUserExist(id: book.id ?? "")
         {
             guard let appDelegate =
@@ -143,7 +143,7 @@ class BooksListInteractor: PresenterToInteractorBooksListProtocol {
             
         }
     }
-
+    
     func getFavoritesBooks() -> Void {
         guard let appDelegate =
                 UIApplication.shared.delegate as? AppDelegate else {
@@ -156,21 +156,21 @@ class BooksListInteractor: PresenterToInteractorBooksListProtocol {
             {
                 favoritesBook = booksList
             }
-
+            
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
-
+            
         }
-
+        
     }
-
+    
     func checkIfUserExist(id:String) -> Bool
     {
         return favoritesBook.contains { (model) -> Bool in
             return model.iD ?? "" == id
         }
     }
-
+    
     func removeFavoris(book: BookModel) {
         guard let appDelegate =
                 UIApplication.shared.delegate as? AppDelegate else {
@@ -178,7 +178,7 @@ class BooksListInteractor: PresenterToInteractorBooksListProtocol {
         }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "BookDataModel")
-
+        
         do {
             if let booksList = try managedContext.fetch(fetchRequest) as? [BookDataModel]
             {
@@ -191,12 +191,12 @@ class BooksListInteractor: PresenterToInteractorBooksListProtocol {
                         return model.iD == book.id
                     }
                 }
-
+                
             }
-
+            
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-
+        
     }
 }
