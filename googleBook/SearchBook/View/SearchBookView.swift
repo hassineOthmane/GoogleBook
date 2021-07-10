@@ -7,16 +7,9 @@
 
 import UIKit
 
-protocol BaseViewProtocol: class {
-
-    var viewController : UIViewController { get }
-
-}
-
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewSearchBooksProtocol:BaseViewProtocol {
 
-    /// configuration
     var presenter: ViewToPresenterSearchBooksProtocol? { get set }
 
 }
@@ -27,9 +20,14 @@ class SearchBooksView: UIViewController {
     var presenter: ViewToPresenterSearchBooksProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
+        iniUI()
+        initNavigationBar()
+    }
+
+    func iniUI() -> Void
+    {
         ui.delegate = self
         view = ui
-        initNavigationBar()
     }
 
     func initNavigationBar () {
@@ -57,5 +55,4 @@ extension SearchBooksView: PresenterToViewSearchBooksProtocol {
     var viewController: UIViewController {
         return self
     }
-
 }

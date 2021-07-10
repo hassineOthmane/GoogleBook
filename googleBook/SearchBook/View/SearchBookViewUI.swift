@@ -6,20 +6,16 @@
 //
 import UIKit
 
-// MARK: SearchBookViewUI Delegate -
-/// SearchBookViewUI Delegate
+// MARK: SearchBookViewUI Delegate
 protocol SearchBooksUIDelegate {
     func search(title:String,author:String)
     func showLibrary()
 }
 
-
+// MARK: SearchBookViewUI
 class SearchBooksViewUI: UIView {
 
     var delegate: SearchBooksUIDelegate?
-
-
-    // ui components
 
     let vStackView : UIStackView = {
         let sv = UIStackView()
@@ -124,7 +120,7 @@ class SearchBooksViewUI: UIView {
         constraints += [NSLayoutConstraint.init(item: vStackView, attribute: .leading, relatedBy: .equal, toItem: self.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 55)] //vStackView.leading = safeAreaLayoutGuide.leading + 55
         constraints += [NSLayoutConstraint.init(item: vStackView, attribute: .trailing, relatedBy: .equal, toItem: self.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: -55)] //vStackView.trailing = safeAreaLayoutGuide.trailing - 55
 
-        //MARK: search
+        //MARK: search_btn
         constraints += [NSLayoutConstraint.init(item: search_btn, attribute: .top, relatedBy: .equal, toItem: self.vStackView, attribute: .bottom, multiplier: 1.0, constant: 80)] //search.top = .vStackView + 80
         constraints += [NSLayoutConstraint.init(item: search_btn, attribute: .leading, relatedBy: .equal, toItem: self.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 55)] //search.leading = safeAreaLayoutGuide.leading + 55
         constraints += [NSLayoutConstraint.init(item: search_btn, attribute: .trailing, relatedBy: .equal, toItem: self.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: -55)] //search.trailing = safeAreaLayoutGuide.trailing - 55
@@ -133,9 +129,9 @@ class SearchBooksViewUI: UIView {
 
         //MARK: library_btn
         constraints += [NSLayoutConstraint.init(item: library_btn, attribute: .top, relatedBy: .equal, toItem: self.search_btn, attribute: .bottom, multiplier: 1.0, constant: 50)] //search.top = .search_btn + 50
-        constraints += [NSLayoutConstraint.init(item: library_btn, attribute: .leading, relatedBy: .equal, toItem: self.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 55)] //search.leading = safeAreaLayoutGuide.leading + 55
-        constraints += [NSLayoutConstraint.init(item: library_btn, attribute: .trailing, relatedBy: .equal, toItem: self.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: -55)] //search.trailing = safeAreaLayoutGuide.trailing - 55
-        constraints += [NSLayoutConstraint.init(item: library_btn, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 60)] // search.height = 60
+        constraints += [NSLayoutConstraint.init(item: library_btn, attribute: .leading, relatedBy: .equal, toItem: self.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 55)] //library_btn.leading = safeAreaLayoutGuide.leading + 55
+        constraints += [NSLayoutConstraint.init(item: library_btn, attribute: .trailing, relatedBy: .equal, toItem: self.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1.0, constant: -55)] //library_btn.trailing = safeAreaLayoutGuide.trailing - 55
+        constraints += [NSLayoutConstraint.init(item: library_btn, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 60)] // library_btn.height = 60
 
         //MARK: title
         constraints += [NSLayoutConstraint.init(item: title_txt, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 40)] // title.height = 40
