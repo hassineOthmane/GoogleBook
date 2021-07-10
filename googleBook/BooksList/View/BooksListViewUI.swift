@@ -51,10 +51,6 @@ class BooksListViewUI: UIView {
 
     }
 
-    @objc func buttonClicked(sender : UIButton){
-
-
-    }
 
     fileprivate func setupConstraints() {
         // add constraints to subviews
@@ -130,11 +126,10 @@ extension BooksListViewUI: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let book = self.dataSource?.getBooks()[indexPath.section]
         {
-            delegate?.showPDF(book: book)
+            delegate?.showDetail(book: book)
         }
 
     }
-
 
 }
 

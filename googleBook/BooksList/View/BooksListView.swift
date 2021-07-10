@@ -57,8 +57,12 @@ extension BooksListView: BooksListViewUIDataSource {
 // MARK: - BooksListViewUIDelegate
 extension BooksListView : BooksListViewUIDelegate
 {
-    func showPDF(book: BookModel) {
-        presenter?.showPDF(book: book)
+    func removeFavoris(book: BookModel) {
+        presenter?.removeFavoris(book: book)
+    }
+
+    func showDetail(book: BookModel) {
+        presenter?.showDetail(book: book)
     }
 
     func saveFavoris(book: BookModel) {
@@ -76,7 +80,8 @@ protocol BooksListViewUIDelegate {
 
     func fetchMoreBooks(page:Int)
     func saveFavoris(book:BookModel)
-    func showPDF(book: BookModel)
+    func removeFavoris(book:BookModel)
+    func showDetail(book: BookModel)
 }
 
 // MARK: BooksListViewUI DataSource -

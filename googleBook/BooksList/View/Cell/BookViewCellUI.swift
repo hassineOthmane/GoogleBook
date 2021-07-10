@@ -11,7 +11,7 @@ import CoreData
 // MARK: BookViewCellUI Delegate -
 protocol BookViewCellUIDelegate {
 
-    func saveFavorite()
+    func setFavorite()
 }
 
 class BookViewCellUI : UIView {
@@ -110,9 +110,8 @@ class BookViewCellUI : UIView {
     }
 
     @objc func pressed() {
-        favoris_btn.setImage(UIImage.init(named: "heartSelected"), for: UIControl.State.normal)
-        delegate?.saveFavorite()
-       
+        delegate?.setFavorite()
+
     }
 
         fileprivate func setupConstraints() {
@@ -192,4 +191,30 @@ class BookViewCellUI : UIView {
 
                     }
                 }
+
+        func isFavoriteBook(_ isFavorite:Bool) -> Void {
+            DispatchQueue.main.async {
+                if isFavorite{
+                    self.favoris_btn.setImage(UIImage.init(named: "heartSelected"), for: UIControl.State.normal)
+                }else
+                {
+                    self.favoris_btn.setImage(UIImage.init(named: "heart"), for: UIControl.State.normal)
+                }
+
+            }
+        }
+
+        func selectBook() -> Void {
+            DispatchQueue.main.async {
+                    self.favoris_btn.setImage(UIImage.init(named: "heartSelected"), for: UIControl.State.normal)
+            }
+        }
+
+        func deSelectBook() -> Void {
+            DispatchQueue.main.async {
+                    self.favoris_btn.setImage(UIImage.init(named: "heart"), for: UIControl.State.normal)
+            }
+        }
+
+
     }

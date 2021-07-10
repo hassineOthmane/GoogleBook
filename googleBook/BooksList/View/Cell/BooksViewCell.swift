@@ -62,6 +62,11 @@ class BooksViewCell : UITableViewCell {
         {
             self.cellUI.setImage(url: url)
         }
+
+        if let isFavorite = book.isFavorite 
+        {
+            self.cellUI.isFavoriteBook(isFavorite)
+        }
     }
 
     func displayfavorisBtn(_ isHidden:Bool) -> Void {
@@ -73,10 +78,21 @@ class BooksViewCell : UITableViewCell {
 
 extension BooksViewCell:BookViewCellUIDelegate
 {
-    func saveFavorite() {
+    func setFavorite() {
         if let book = book
         {
-            delegate?.saveFavoris(book: book)
+            if book.isFavorite == true
+            {
+                delegate?.removeFavoris(book: book)
+                self.book?.isFavorite = false
+                cellUI.deSelectBook()
+            } else
+            {
+                delegate?.saveFavoris(book: book)
+                self.book?.isFavorite = true
+                cellUI.selectBook()
+            }
+
         }
     }
 }

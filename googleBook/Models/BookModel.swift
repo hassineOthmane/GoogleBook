@@ -12,6 +12,8 @@ public struct BookModel: Decodable {
     let id: String?
 
     let volumeInfo : VolumeInfo?
+
+    var isFavorite : Bool?
 }
 
 

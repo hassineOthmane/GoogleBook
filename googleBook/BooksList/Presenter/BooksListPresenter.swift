@@ -34,7 +34,9 @@ protocol ViewToPresenterBooksListProtocol {
 
     func saveFavoris(book: BookModel)
 
-    func showPDF(book: BookModel)
+    func removeFavoris(book: BookModel)
+
+    func showDetail(book: BookModel)
 
 }
 
@@ -49,7 +51,12 @@ protocol InteractorToPresenterBooksListProtocol {
 
 
 class BooksListPresenter: ViewToPresenterBooksListProtocol {
-    func showPDF(book: BookModel) {
+
+    func removeFavoris(book: BookModel) {
+        interactor?.removeFavoris(book: book)
+    }
+
+    func showDetail(book: BookModel) {
         if let viewController = self.view?.viewController
         {
             router?.showBookDetail(for:viewController, book: book)
