@@ -11,6 +11,10 @@ class BooksViewCell : UITableViewCell {
 
     let cellUI = BookViewCellUI()
 
+    var delegate: BooksListViewUIDelegate?
+
+    var book : BookModel?
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -26,7 +30,8 @@ class BooksViewCell : UITableViewCell {
 
     private func setupUI() {
         cellUI.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(cellUI)
+        cellUI.delegate = self
+        self.contentView.addSubview(cellUI)
         self.selectionStyle = .none
         self.backgroundColor = .clear
         cellUI.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: 10).isActive=true
@@ -37,26 +42,41 @@ class BooksViewCell : UITableViewCell {
 
     func set(book:BookModel) -> Void
     {
+        self.book = book
         if let title = book.volumeInfo?.title
         {
-                self.cellUI.setTile(title: title)
+            self.cellUI.setTile(title: title)
         }
 
         if let author = book.volumeInfo?.authors?.first
         {
-                self.cellUI.setAuthor(author: author)
+            self.cellUI.setAuthor(author: author)
         }
 
         if let description = book.volumeInfo?.description
         {
-                self.cellUI.setDescription(description: description)
+            self.cellUI.setDescription(description: description)
         }
 
         if let url = book.volumeInfo?.imageLinks?.smallThumbnail
         {
-                self.cellUI.setImage(url: url)
+            self.cellUI.setImage(url: url)
         }
-
     }
 
+    func displayfavorisBtn(_ isHidden:Bool) -> Void {
+
+        self.cellUI.favoris_btn.isHidden = isHidden
+    }
+
+}
+
+extension BooksViewCell:BookViewCellUIDelegate
+{
+    func saveFavorite() {
+        if let book = book
+        {
+            delegate?.saveFavoris(book: book)
+        }
+    }
 }

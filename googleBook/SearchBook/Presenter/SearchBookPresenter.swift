@@ -14,9 +14,9 @@ protocol ViewToPresenterSearchBooksProtocol {
 
     var router: PresenterToRouterSearchBooksProtocol? { get set }
 
-    /// functions
     func showBooks(title:String,author:String)
 
+    func showLibrary()
 
 }
 
@@ -36,5 +36,10 @@ class SearchBooksPresenter: ViewToPresenterSearchBooksProtocol {
 
     }
 
-
+    func showLibrary() {
+        if let viewController = view?.viewController
+        {
+        router?.showLibrary(for: viewController)
+        }
+    }
 }

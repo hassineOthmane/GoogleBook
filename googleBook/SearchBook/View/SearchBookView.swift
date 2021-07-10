@@ -29,12 +29,14 @@ class SearchBooksView: UIViewController {
         super.viewDidLoad()
         ui.delegate = self
         view = ui
-        // Do any additional setup after loading the view.
     }
 
 }
 
 extension SearchBooksView: SearchBooksUIDelegate {
+    func showLibrary() {
+        presenter?.showLibrary()
+    }
 
     func search(title:String,author:String) {
         presenter?.showBooks(title:title,author:author)

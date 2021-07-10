@@ -20,6 +20,8 @@ protocol ViewToPresenterBooksListProtocol {
 
     var author: String? { get set }
 
+    var isOffline: Bool { get set }
+
     var books : [BookModel]? {get set }
 
     func fetchBooks()
@@ -29,6 +31,10 @@ protocol ViewToPresenterBooksListProtocol {
     func getBooksCount() -> Int
 
     func getBooks() -> [BookModel]
+
+    func saveFavoris(book: BookModel)
+
+    func showPDF(book: BookModel)
 
 }
 
@@ -43,6 +49,21 @@ protocol InteractorToPresenterBooksListProtocol {
 
 
 class BooksListPresenter: ViewToPresenterBooksListProtocol {
+    func showPDF(book: BookModel) {
+        if let viewController = self.view?.viewController
+        {
+            router?.showPDF(for:viewController, book: book)
+        }
+
+    }
+
+
+    func saveFavoris(book: BookModel) {
+        interactor?.saveFavoris(book: book)
+    }
+
+
+    var isOffline: Bool = false
 
     var view: PresenterToViewBooksListProtocol?
 
@@ -58,18 +79,23 @@ class BooksListPresenter: ViewToPresenterBooksListProtocol {
     
     func fetchBooks() {
 
-        if let title = title, let author = author {
-
-            interactor?.fetchBooks(title: title, author: author)
+        if !isOffline{
+            if let title = title, let author = author {
+                interactor?.fetchBooks(title: title, author: author)
+            }
+        } else
+        {
+            interactor?.fetchFavoritesBook()
         }
+
 
     }
 
     func fetchMoreBooks( index: Int) {
-
+        if !isOffline{
         if let title = title, let author = author {
             interactor?.fetchMoreBooks(title: title, author: author, index: index)
-        }
+        }}
     }
 
     func getBooksCount() -> Int {
@@ -79,6 +105,8 @@ class BooksListPresenter: ViewToPresenterBooksListProtocol {
     func getBooks() -> [BookModel] {
         books ?? [BookModel]()
     }
+
+
 
 }
 

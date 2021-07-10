@@ -13,6 +13,8 @@ protocol PresenterToRouterSearchBooksProtocol {
     func createModule() -> UIViewController
 
     func showBooks(for viewController : UIViewController,title:String,author:String)
+
+    func showLibrary(for viewController: UIViewController) -> Void
 }
 
 public class SearchBooksRouter: PresenterToRouterSearchBooksProtocol {
@@ -31,6 +33,11 @@ public class SearchBooksRouter: PresenterToRouterSearchBooksProtocol {
 
     func showBooks(for viewController: UIViewController,title:String,author:String) {
         let vc = BooksListRouter.init().createModule(title: title, author: author)
+        viewController.show(vc, sender: nil)
+    }
+
+    func showLibrary(for viewController: UIViewController) {
+        let vc = BooksListRouter.init().createModule(isOffline: true)
         viewController.show(vc, sender: nil)
     }
 

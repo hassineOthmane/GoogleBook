@@ -9,8 +9,6 @@ import Foundation
 
 public struct BookModel: Decodable {
 
-    let kind: String?
-
     let id: String?
 
     let volumeInfo : VolumeInfo?
@@ -25,6 +23,8 @@ public struct VolumeInfo: Decodable {
 
     let imageLinks : ImageLinks?
 
+    let previewLink : String?
+
     let authors : [String]?
 }
 
@@ -32,8 +32,6 @@ public struct VolumeInfo: Decodable {
 public struct ImageLinks: Decodable {
 
     let smallThumbnail: String?
-
-    let thumbnail: String?
 
 }
 

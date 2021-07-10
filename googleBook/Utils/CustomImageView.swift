@@ -29,7 +29,6 @@ public class CustomImageView: UIImageView {
         URLSession.shared.dataTask(with: url, completionHandler: { (data, respones, error) in
 
             if error != nil {
-                //print(error ?? "")
                 return
             }
 
