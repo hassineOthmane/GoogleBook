@@ -12,6 +12,8 @@ protocol ViewToPresenterBooksListProtocol {
 
     var view: PresenterToViewBooksListProtocol? { get set }
 
+    var interactor: PresenterToInteractorBooksListProtocol? { get set }
+
     var router: PresenterToRouterBooksListProtocol? { get set }
 
     var title: String? { get set }
@@ -28,6 +30,14 @@ protocol ViewToPresenterBooksListProtocol {
 
     func getBooks() -> [BookModel]
 
+}
+
+// MARK: Interactor Output (Interactor -> Presenter)
+protocol InteractorToPresenterBooksListProtocol {
+
+    func set(books:BooksModel)
+
+    func loadMore(books:BooksModel)
 
 }
 
@@ -36,6 +46,8 @@ class BooksListPresenter: ViewToPresenterBooksListProtocol {
 
     var view: PresenterToViewBooksListProtocol?
 
+    var interactor: PresenterToInteractorBooksListProtocol?
+
     var router: PresenterToRouterBooksListProtocol?
 
     var books: [BookModel]? = [BookModel]()
@@ -43,39 +55,20 @@ class BooksListPresenter: ViewToPresenterBooksListProtocol {
     var title: String?
     
     var author: String?
-
+    
     func fetchBooks() {
-        if let title = title, let author = author
-        {
-            self.fetchBooks(title: title, author: author) {(result: Result<BooksModel, Error>) in
-                switch result {
-                case .success(let books):
-                    self.books = books.items
-                    self.view?.showBooks()
-                    break;
-                case .failure(let error):
-                    print(error)
-                    break;
-                }
-            }
+
+        if let title = title, let author = author {
+
+            interactor?.fetchBooks(title: title, author: author)
         }
 
     }
 
     func fetchMoreBooks( index: Int) {
-        if let title = title, let author = author
-        {
-            self.fetchMoreBooks(title: title, author: author, index: index) {(result: Result<BooksModel, Error>) in
-                switch result {
-                case .success(let books):
-                    self.books?.append(contentsOf: books.items)
-                    self.view?.showBooks()
-                    break;
-                case .failure(let error):
-                    print(error)
-                    break;
-                }
-            }
+
+        if let title = title, let author = author {
+            interactor?.fetchMoreBooks(title: title, author: author, index: index)
         }
     }
 
@@ -87,23 +80,20 @@ class BooksListPresenter: ViewToPresenterBooksListProtocol {
         books ?? [BookModel]()
     }
 
-    func fetchBooks(title:String,author:String,completion: @escaping (Result<BooksModel, Error>) -> Void) {
-        let titleQueryItem = URLQueryItem(name: "q", value: title)
-        let authorQueryItem = URLQueryItem(name: "inauthor", value: author)
-        let networkRequest:NetworkRouter = HTTPRouter.init(method: .get, scheme: "https", host: "www.googleapis.com", path: "/books/v1", endPoint: HTTPEndPoint.getBooks, queries: [titleQueryItem,authorQueryItem])
-        let testNetworkLayer = HTTPLayer.init()
-        let service = BookNetworkService.init(networkLayer: testNetworkLayer, networkRouter:networkRequest )
-        service.fetchBooks(completion: completion)
+}
+
+
+extension BooksListPresenter: InteractorToPresenterBooksListProtocol
+{
+    func loadMore(books: BooksModel) {
+        self.books?.append(contentsOf: books.items)
+        view?.showBooks()
     }
 
-    func fetchMoreBooks(title:String,author:String,index:Int,completion: @escaping (Result<BooksModel, Error>) -> Void) {
-        let titleQueryItem = URLQueryItem(name: "q", value: title)
-        let authorQueryItem = URLQueryItem(name: "inauthor", value: author)
-        let indexQueryItem = URLQueryItem(name: "startIndex", value: index.description)
-        let networkRequest:NetworkRouter = HTTPRouter.init(method: .get, scheme: "https", host: "www.googleapis.com", path: "/books/v1", endPoint: HTTPEndPoint.getBooks, queries: [titleQueryItem,authorQueryItem,indexQueryItem])
-        let testNetworkLayer = HTTPLayer.init()
-        let service = BookNetworkService.init(networkLayer: testNetworkLayer, networkRouter:networkRequest )
-        service.fetchBooks(completion: completion)
+    func set(books: BooksModel) {
+       self.books = books.items
+        view?.showBooks()
     }
+
 
 }

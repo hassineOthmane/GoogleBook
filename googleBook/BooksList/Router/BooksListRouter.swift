@@ -21,13 +21,15 @@ public class BooksListRouter: PresenterToRouterBooksListProtocol {
 
     public func createModule(title:String,author:String) -> UIViewController {
         let vc = BooksListView.init()
-        let presenter: ViewToPresenterBooksListProtocol = BooksListPresenter.init()
+        let presenter: ViewToPresenterBooksListProtocol & InteractorToPresenterBooksListProtocol = BooksListPresenter.init()
         let router : PresenterToRouterBooksListProtocol = BooksListRouter.init()
         vc.presenter = presenter
         vc.presenter?.router = router
         vc.presenter?.title = title
         vc.presenter?.author = author
         vc.presenter?.view = vc
+        vc.presenter?.interactor = BooksListInteractor()
+        vc.presenter?.interactor?.presenter = presenter
         return vc
     }
 }

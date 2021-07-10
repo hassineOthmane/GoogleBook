@@ -35,6 +35,7 @@
 		B642914F26991BDF00EC8912 /* BooksListViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642914E26991BDF00EC8912 /* BooksListViewUI.swift */; };
 		B6A9998C2699301900A9E1E3 /* BooksListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A9998B2699301900A9E1E3 /* BooksListPresenter.swift */; };
 		B6A999922699325B00A9E1E3 /* BooksListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A999912699325B00A9E1E3 /* BooksListRouter.swift */; };
+		B6A9999B269937A100A9E1E3 /* BooksListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A9999A269937A100A9E1E3 /* BooksListInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		B642914E26991BDF00EC8912 /* BooksListViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListViewUI.swift; sourceTree = "<group>"; };
 		B6A9998B2699301900A9E1E3 /* BooksListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListPresenter.swift; sourceTree = "<group>"; };
 		B6A999912699325B00A9E1E3 /* BooksListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListRouter.swift; sourceTree = "<group>"; };
+		B6A9999A269937A100A9E1E3 /* BooksListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,11 +276,10 @@
 		B6429120269902F200EC8912 /* BooksList */ = {
 			isa = PBXGroup;
 			children = (
-				B6A999902699323A00A9E1E3 /* Router */,
-				B6A9998A2699300100A9E1E3 /* Presenter */,
 				B642912F26991A1D00EC8912 /* View */,
-				B64291212699032100EC8912 /* BooksListView.swift */,
-				B642914E26991BDF00EC8912 /* BooksListViewUI.swift */,
+				B6A9998A2699300100A9E1E3 /* Presenter */,
+				B6A999992699378000A9E1E3 /* Interactor */,
+				B6A999902699323A00A9E1E3 /* Router */,
 			);
 			path = BooksList;
 			sourceTree = "<group>";
@@ -295,6 +296,8 @@
 			isa = PBXGroup;
 			children = (
 				B642913826991A7C00EC8912 /* Cell */,
+				B64291212699032100EC8912 /* BooksListView.swift */,
+				B642914E26991BDF00EC8912 /* BooksListViewUI.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +325,14 @@
 				B6A999912699325B00A9E1E3 /* BooksListRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		B6A999992699378000A9E1E3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B6A9999A269937A100A9E1E3 /* BooksListInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,6 +466,7 @@
 			files = (
 				B64291122699001F00EC8912 /* BookModel.swift in Sources */,
 				B64290F62698F6E600EC8912 /* HTTPEndPoint.swift in Sources */,
+				B6A9999B269937A100A9E1E3 /* BooksListInteractor.swift in Sources */,
 				B64290D62698F66F00EC8912 /* NetworkLayer.swift in Sources */,
 				B642913A26991A8B00EC8912 /* BookViewCellUI.swift in Sources */,
 				B642911C2699015E00EC8912 /* SearchBookRouter.swift in Sources */,
