@@ -25,6 +25,7 @@ class BooksListView: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        initNavigationBar()
         presenter?.fetchBooks()
 
     }
@@ -33,6 +34,14 @@ class BooksListView: UIViewController {
         ui.delegate = self
         ui.dataSource = self
         view = ui
+    }
+
+
+    func initNavigationBar () {
+        DispatchQueue.main.async {
+            self.title = "Books"
+            self.navigationController?.navigationBar.tintColor = Colors.backgroundColor
+        }
     }
 
 }

@@ -24,6 +24,14 @@ class BookDetailView: UIViewController {
         ui.dataSource = self
         ui.delegate = self
         view = ui
+        initNavigationBar()
+    }
+
+    func initNavigationBar () {
+        DispatchQueue.main.async {
+            self.title = "Book Detail"
+            self.navigationController?.navigationBar.tintColor = Colors.backgroundColor
+        }
     }
     
 }

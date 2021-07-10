@@ -167,7 +167,6 @@ class BooksListInteractor: PresenterToInteractorBooksListProtocol {
     func checkIfUserExist(id:String) -> Bool
     {
         return favoritesBook.contains { (model) -> Bool in
-            print("\(model.iD ?? "") == \(id)")
             return model.iD ?? "" == id
         }
     }

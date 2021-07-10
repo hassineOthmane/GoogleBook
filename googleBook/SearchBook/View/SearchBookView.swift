@@ -29,6 +29,14 @@ class SearchBooksView: UIViewController {
         super.viewDidLoad()
         ui.delegate = self
         view = ui
+        initNavigationBar()
+    }
+
+    func initNavigationBar () {
+        DispatchQueue.main.async {
+            self.title = "Search Book"
+            self.navigationController?.navigationBar.tintColor = Colors.backgroundColor
+        }
     }
 
 }
