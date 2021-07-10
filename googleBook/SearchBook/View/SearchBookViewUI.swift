@@ -33,6 +33,7 @@ class SearchBooksViewUI: UIView {
     var title : UITextField = {
         let txt = UITextField()
         txt.textColor = UIColor.white
+        txt.text = "misérables"
         txt.textAlignment = .left
         txt.font = UIFont.init(name: "LucidaGrande", size: 16)
         txt.attributedPlaceholder = NSAttributedString(string: "title",attributes: [NSAttributedString.Key.foregroundColor: Colors.placeHolderColor])
@@ -43,7 +44,7 @@ class SearchBooksViewUI: UIView {
     var author : UITextField = {
         let txt = UITextField()
         txt.textAlignment = .left
-        txt.isSecureTextEntry = true
+        txt.text = "Hugo"
         txt.attributedPlaceholder = NSAttributedString(string: "author",attributes: [NSAttributedString.Key.foregroundColor: Colors.placeHolderColor])
         txt.textColor = UIColor.white
         txt.font = UIFont.init(name: "LucidaGrande", size: 16)
