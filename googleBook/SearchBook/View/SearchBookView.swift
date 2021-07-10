@@ -19,8 +19,6 @@ protocol PresenterToViewSearchBooksProtocol:BaseViewProtocol {
     /// configuration
     var presenter: ViewToPresenterSearchBooksProtocol? { get set }
 
-
-
 }
 
 class SearchBooksView: UIViewController {
@@ -37,12 +35,10 @@ class SearchBooksView: UIViewController {
 }
 
 extension SearchBooksView: SearchBooksUIDelegate {
+
     func search(title:String,author:String) {
-
         presenter?.showBooks(title:title,author:author)
-
     }
-
 
 }
 

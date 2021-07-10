@@ -30,9 +30,7 @@ public class SearchBooksRouter: PresenterToRouterSearchBooksProtocol {
     }
 
     func showBooks(for viewController: UIViewController,title:String,author:String) {
-        let vc = BooksListView.init()
-        vc.titleBook = title
-        vc.author = author
+        let vc = BooksListRouter.init().createModule(title: title, author: author)
         viewController.show(vc, sender: nil)
     }
 

@@ -33,6 +33,8 @@
 		B642913A26991A8B00EC8912 /* BookViewCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642913926991A8B00EC8912 /* BookViewCellUI.swift */; };
 		B642914226991B5500EC8912 /* BooksViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642914126991B5500EC8912 /* BooksViewCell.swift */; };
 		B642914F26991BDF00EC8912 /* BooksListViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642914E26991BDF00EC8912 /* BooksListViewUI.swift */; };
+		B6A9998C2699301900A9E1E3 /* BooksListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A9998B2699301900A9E1E3 /* BooksListPresenter.swift */; };
+		B6A999922699325B00A9E1E3 /* BooksListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A999912699325B00A9E1E3 /* BooksListRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		B642913926991A8B00EC8912 /* BookViewCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewCellUI.swift; sourceTree = "<group>"; };
 		B642914126991B5500EC8912 /* BooksViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewCell.swift; sourceTree = "<group>"; };
 		B642914E26991BDF00EC8912 /* BooksListViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListViewUI.swift; sourceTree = "<group>"; };
+		B6A9998B2699301900A9E1E3 /* BooksListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListPresenter.swift; sourceTree = "<group>"; };
+		B6A999912699325B00A9E1E3 /* BooksListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +274,8 @@
 		B6429120269902F200EC8912 /* BooksList */ = {
 			isa = PBXGroup;
 			children = (
+				B6A999902699323A00A9E1E3 /* Router */,
+				B6A9998A2699300100A9E1E3 /* Presenter */,
 				B642912F26991A1D00EC8912 /* View */,
 				B64291212699032100EC8912 /* BooksListView.swift */,
 				B642914E26991BDF00EC8912 /* BooksListViewUI.swift */,
@@ -300,6 +306,22 @@
 				B642913926991A8B00EC8912 /* BookViewCellUI.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		B6A9998A2699300100A9E1E3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B6A9998B2699301900A9E1E3 /* BooksListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B6A999902699323A00A9E1E3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B6A999912699325B00A9E1E3 /* BooksListRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,7 +470,9 @@
 				B642913426991A5600EC8912 /* CustomImageView.swift in Sources */,
 				B642914226991B5500EC8912 /* BooksViewCell.swift in Sources */,
 				B642910A2699000E00EC8912 /* BooksModel.swift in Sources */,
+				B6A9998C2699301900A9E1E3 /* BooksListPresenter.swift in Sources */,
 				B64290F12698F6DC00EC8912 /* HTTPError.swift in Sources */,
+				B6A999922699325B00A9E1E3 /* BooksListRouter.swift in Sources */,
 				B64290DE2698F67A00EC8912 /* NetworkRouter.swift in Sources */,
 				B64291222699032100EC8912 /* BooksListView.swift in Sources */,
 				B64290FB2698F6F000EC8912 /* HTTPLayer.swift in Sources */,
