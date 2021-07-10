@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B605306F2699C2A70022F033 /* BookDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605306E2699C2A70022F033 /* BookDetailRouter.swift */; };
 		B64290412698DA1A00EC8912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290402698DA1A00EC8912 /* AppDelegate.swift */; };
 		B64290452698DA1A00EC8912 /* SearchBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64290442698DA1A00EC8912 /* SearchBookView.swift */; };
 		B642904A2698DA1D00EC8912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64290492698DA1D00EC8912 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B605306E2699C2A70022F033 /* BookDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailRouter.swift; sourceTree = "<group>"; };
 		B642903D2698DA1A00EC8912 /* googleBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googleBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64290402698DA1A00EC8912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B64290442698DA1A00EC8912 /* SearchBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B605306D2699C28A0022F033 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B605306E2699C2A70022F033 /* BookDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		B64290342698DA1A00EC8912 = {
 			isa = PBXGroup;
 			children = (
@@ -163,8 +173,8 @@
 				B64290D32698F65200EC8912 /* NetworkLayer */,
 				B64290FF2698F7E700EC8912 /* Services */,
 				B64290922698DB7400EC8912 /* SearchBook */,
-				B6D7BEC92699AAF700E60DF8 /* BookDetail */,
 				B6429120269902F200EC8912 /* BooksList */,
+				B6D7BEC92699AAF700E60DF8 /* BookDetail */,
 				B64290492698DA1D00EC8912 /* Assets.xcassets */,
 				B642904B2698DA1D00EC8912 /* LaunchScreen.storyboard */,
 				B642904E2698DA1D00EC8912 /* Info.plist */,
@@ -362,8 +372,9 @@
 		B6D7BEC92699AAF700E60DF8 /* BookDetail */ = {
 			isa = PBXGroup;
 			children = (
-				B6D7BEDF2699C07900E60DF8 /* BookDetailPresenter */,
+				B605306D2699C28A0022F033 /* Router */,
 				B6D7BEDE2699C07100E60DF8 /* View */,
+				B6D7BEDF2699C07900E60DF8 /* BookDetailPresenter */,
 			);
 			path = BookDetail;
 			sourceTree = "<group>";
@@ -530,6 +541,7 @@
 				B64290412698DA1A00EC8912 /* AppDelegate.swift in Sources */,
 				B6D7BEE12699C08200E60DF8 /* BookDetailPresenter.swift in Sources */,
 				B6D7BECB2699AB1200E60DF8 /* BookDetailView.swift in Sources */,
+				B605306F2699C2A70022F033 /* BookDetailRouter.swift in Sources */,
 				B6A99B432699840900A9E1E3 /* BookDataModel+CoreDataProperties.swift in Sources */,
 				B64291012698F80B00EC8912 /* BookServices.swift in Sources */,
 				B64290CC2698F58300EC8912 /* Const.swift in Sources */,

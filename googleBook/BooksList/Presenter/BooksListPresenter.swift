@@ -52,7 +52,7 @@ class BooksListPresenter: ViewToPresenterBooksListProtocol {
     func showPDF(book: BookModel) {
         if let viewController = self.view?.viewController
         {
-            router?.showPDF(for:viewController, book: book)
+            router?.showBookDetail(for:viewController, book: book)
         }
 
     }

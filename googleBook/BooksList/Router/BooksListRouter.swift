@@ -14,7 +14,7 @@ protocol PresenterToRouterBooksListProtocol {
 
     func createModule(title:String,author:String) -> UIViewController
     func createModule(isOffline:Bool) -> UIViewController
-    func showPDF(for viewController: UIViewController,book:BookModel)
+    func showBookDetail(for viewController: UIViewController,book:BookModel)
     
 }
 
@@ -49,11 +49,10 @@ public class BooksListRouter: PresenterToRouterBooksListProtocol {
         return vc
     }
 
-    public func showPDF(for viewController: UIViewController,book:BookModel)
+    public func showBookDetail(for viewController: UIViewController,book:BookModel)
     {
-        let vc = BookDetailView()
-        let presenter : ViewToPresenterBookDetailProtocol = BookDetailPresenter.init(book: book)
-        vc.presenter = presenter
+        let router = BookDetailRouter.init()
+        let vc = router.createModule(book: book)
         viewController.show(vc, sender: nil)
 
     }
